@@ -1,0 +1,48 @@
+package com.hcl.iTime.service.impl;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * @author Laxman
+ *
+ */
+@Slf4j
+@Service
+public class HolidayServiceImpl implements HolidayService {
+
+	@Autowired
+	private HolidayRepository holidayRepository;
+
+	@Override
+	public List<LocalDate> holidays(List<String> myDays) {
+
+		log.info("HolidayServiceImpl :: holidays --- ");
+
+		List<LocalDate> localDates = new ArrayList<>();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		
+		myDays.stream().forEach(myDate -> localDates.add(LocalDate.parse(myDate, formatter)));
+		
+//		List<HolidayDto> holidayDtos = new ArrayList<>();
+		Optional<List<LocalDate>> holidays = holidayRepository.findHolidayDateIn(localDates);
+	/*	if (holidays.isPresent()) {
+			holidays.get().stream()
+					.forEach(holiday -> holidayDtos.add(HolidayDto.builder().holidaysId(holiday.getHolidaysId())
+							.holidayDate(holiday.getHolidayDate()).remarks(holiday.getRemarks()).build()));
+		}*/
+		
+		return holidays.get();
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.hcl.iTime.exception;
+
+public class RejectMessageEmptyException extends Exception {
+
+}

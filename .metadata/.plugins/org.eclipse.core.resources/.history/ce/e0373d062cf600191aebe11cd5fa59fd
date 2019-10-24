@@ -1,0 +1,9 @@
+package com.hcl.iTime.service;
+
+import com.hcl.iTime.dto.EmployeeDto;
+
+public interface EmployeeService {
+
+	EmployeeDto getManager(Integer employeeId);
+
+}

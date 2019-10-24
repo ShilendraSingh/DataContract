@@ -1,0 +1,10 @@
+com.hcl.iTime
+com.hcl.iTime.Entity
+com.hcl.iTime.configuration
+com.hcl.iTime.controller
+com.hcl.iTime.dto
+com.hcl.iTime.exception
+com.hcl.iTime.repository
+com.hcl.iTime.service
+com.hcl.iTime.service.impl
+com.hcl.iTime.utility

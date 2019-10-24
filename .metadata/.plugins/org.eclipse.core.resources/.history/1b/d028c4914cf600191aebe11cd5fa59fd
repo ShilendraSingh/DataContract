@@ -1,0 +1,37 @@
+package com.hcl.iTime.controller;
+
+import java.util.List;
+
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.test.web.servlet.MockMvc;
+
+import com.hcl.iTime.dto.ApproveDto;
+import com.hcl.iTime.dto.ResponseDto;
+import com.hcl.iTime.dto.TimesheetDto;
+import com.hcl.iTime.service.TimesheetService;
+import com.hcl.iTime.service.impl.TimesheetServiceImpl;
+
+@RunWith(MockitoJUnitRunner.class)
+public class TimeSheetController {
+	
+	@Mock
+	TimesheetService timesheetService;
+
+	@InjectMocks
+	TimesheetController timesheetController;
+
+	@Mock
+	TimesheetServiceImpl  timesheetServiceImpl;
+	
+	private MockMvc mockMvc;
+	ApproveDto approveDto = null;
+	TimesheetDto timeSheet = null;
+	TimesheetDto timeSheet1 = null;
+	List<Integer> timeSheetList = null;
+	ResponseDto response = null;
+	
+
+}

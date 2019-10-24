@@ -1,0 +1,9 @@
+package com.hcl.iTime.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.hcl.iTime.Entity.Employee;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+
+}

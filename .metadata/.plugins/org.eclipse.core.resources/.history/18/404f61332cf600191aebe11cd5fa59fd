@@ -1,0 +1,5 @@
+package com.hcl.iTime.repository;
+
+public interface EmployeeRepository {
+
+}
